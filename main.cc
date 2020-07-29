@@ -13,8 +13,8 @@ int main(int argc, char *argv[]){
         cout << "-----------------------------------------------------------------------------------" << endl;
         for(int i = 1; i < argc; i++){
             string input_filename(argv[i]);
-            cout << "Starting optimistic load balancer algorithm with input as " << input_filename << endl;
-            OptimisticLoadBalancer olb(input_filename); 
+            cout << "Starting Opportunistic load balancer algorithm with input as " << input_filename << endl;
+            OpportunisticLoadBalancer olb(input_filename); 
             olb.schedule();
             cout << "Completed processing. Logs can be found in " << olb.getOutputFilename() << endl;
             cout << "-----------------------------------------------------------------------------------" << endl;

@@ -4,7 +4,7 @@
 
 using namespace std;
 
-OptimisticLoadBalancer::OptimisticLoadBalancer(string input_filename){
+OpportunisticLoadBalancer::OpportunisticLoadBalancer(string input_filename){
     this->input_filename = input_filename;
     this->output_filename = input_filename.substr(0, input_filename.size() - 4) + "_output.txt";
 
@@ -34,11 +34,11 @@ OptimisticLoadBalancer::OptimisticLoadBalancer(string input_filename){
     }
 }
 
-OptimisticLoadBalancer::~OptimisticLoadBalancer(){
+OpportunisticLoadBalancer::~OpportunisticLoadBalancer(){
     delete []this->ETC;
 }
 
-void OptimisticLoadBalancer::print_ETC_matrix(){
+void OpportunisticLoadBalancer::print_ETC_matrix(){
     for(int i = 0; i < this->tasks_count; i++){
         for(int j = 0; j < this->ETC[i].size(); j++){
             cout << this->ETC[i][j] << " ";
@@ -47,7 +47,7 @@ void OptimisticLoadBalancer::print_ETC_matrix(){
     }
 }
 
-int OptimisticLoadBalancer::findFreeVirtualMachine(){
+int OpportunisticLoadBalancer::findFreeVirtualMachine(){
     double min_cumulative_execution_time = numeric_limits<double>::max();
     int id = -1; 
     /*
@@ -65,13 +65,13 @@ int OptimisticLoadBalancer::findFreeVirtualMachine(){
     return id;
 }
 
-void OptimisticLoadBalancer::printVirtualMachinesStatus(ofstream &output){
+void OpportunisticLoadBalancer::printVirtualMachinesStatus(ofstream &output){
     for(int i = 0; i < this->vm_count; i++){
         output << "ID: " << i + 1 << " | Cumulative Execution Time: " << std::setprecision (15) << this->virtual_machines[i].getCumulativeExecutionTime() << endl;
     }
 }
 
-void OptimisticLoadBalancer::schedule(){
+void OpportunisticLoadBalancer::schedule(){
     ofstream output(this->output_filename);
     if (output.is_open())
     {
@@ -103,7 +103,7 @@ void OptimisticLoadBalancer::schedule(){
     }
 }
 
-string OptimisticLoadBalancer::getOutputFilename() const{
+string OpportunisticLoadBalancer::getOutputFilename() const{
     return this->output_filename;
 }
 
