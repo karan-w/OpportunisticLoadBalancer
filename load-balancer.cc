@@ -106,3 +106,5 @@ void OptimisticLoadBalancer::schedule(){
 string OptimisticLoadBalancer::getOutputFilename() const{
     return this->output_filename;
 }
+
+

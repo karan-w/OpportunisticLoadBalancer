@@ -18,3 +18,5 @@ class VirtualMachine{
 
 
 #endif /* VIRTUALMACHINE_H */
+
+
