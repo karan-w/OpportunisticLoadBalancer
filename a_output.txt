@@ -1,0 +1,2 @@
+Initial cumulative execution times of all Virtual Machines
+Selecting Virtual Machine #1 for scheduling task # 1
